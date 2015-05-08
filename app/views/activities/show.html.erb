@@ -1,0 +1,33 @@
+<head>
+  <title><%= @activity.title %></title>
+</head>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+
+<strong><%= @activity.title %></strong> 將於 <strong><%= @activity.startdate %></strong> 至 <strong><%= @activity.finishdate %></strong> 在 <strong><%= @activity.address %></strong> 舉行
+</p>
+
+<p>
+  <strong>活動名稱:</strong>
+  <%= @activity.title %>
+</p>
+
+<p>
+  <strong>開始日期:</strong>
+  <%= @activity.startdate %>
+</p>
+
+<p>
+  <strong>結束日期:</strong>
+  <%= @activity.finishdate %>
+</p>
+
+<p>
+  <strong>地址:</strong>
+  <%= @activity.address %>
+</p>
+
+<%= link_to '編輯', edit_activity_path(@activity) %> |
+<%= link_to '返回列表', activities_path %>

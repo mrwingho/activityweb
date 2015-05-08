@@ -1,0 +1,36 @@
+<head>
+  <title>活動</title>
+</head>
+<p id="notice"><%= notice %></p>
+
+<h1>活動列表</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>活動名稱</th>
+      <th>開始日期</th>
+      <th>結束日期</th>
+      <th>地址</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.title %></td>
+        <td><%= activity.startdate %></td>
+        <td><%= activity.finishdate %></td>
+        <td><%= activity.address %></td>
+        <td><%= link_to '打開', activity %></td>
+        <td><%= link_to '編輯', edit_activity_path(activity) %></td>
+        <td><%= link_to '刪除', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新增活動', new_activity_path %>
