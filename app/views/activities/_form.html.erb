@@ -26,20 +26,20 @@
     </div>
   </div>
   
-  <div class="field form-group">
+  <div class="field form-inline">
     <%= f.label :'Start date', class: 'col-sm-2 control-label' %>
-   <div class="col-sm-12">
-	<%= f.date_select :startdate, class: 'form-control' %>
+   <div class="col-sm-10">
+	<%= f.date_select :startdate, {}, {class: "form-control"} %>
 	</div>
   </div>
     
-  <div class="field form-group">
+  <div class="field form-inline">
     <%= f.label :'finish date', class: 'col-sm-2 control-label' %>
 	<div class="col-sm-10">
-    <%= f.date_select :finishdate, class: 'form-control' %>
+    <%= f.date_select :finishdate, {}, {class: "form-control"} %>
 	</div>
   </div>
-  
+ 
   <div class="field form-group">
     <%= f.label :address, class: 'col-sm-2 control-label' %>
 	<div class='col-sm-10'>
@@ -47,10 +47,14 @@
 	</div>
   </div>
   
+  
   <div class="actions form-group">
-    <div class='col-sm-2'>
+    <div class='col-sm-offset-2 col-sm-2'>
     <%= f.submit "發送", class: 'form-control' %>
 	</div>
+	<div class= "col-sm-2">
+<%= link_to '返回', activities_path, class: 'btn btn-default' %>
+</div>
   </div>
 <% end %>
 </form>
