@@ -9,29 +9,48 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+<% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+<form role="form" class="form-inline">
+  <div class="field form-group">
+    <%= f.label :title, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+	<%= f.text_field :title, class: 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description, :rows => "10" %>
+  
+  <div class="field form-group">
+    <%= f.label :description, class: 'col-sm-2 control-label' %>
+	<div class="col-sm-10">
+    <%= f.text_area :description, class: 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :startdate %><br>
-    <%= f.date_select :startdate %>
+  
+  <div class="field form-group">
+    <%= f.label :'Start date', class: 'col-sm-2 control-label' %>
+   <div class="col-sm-12">
+	<%= f.date_select :startdate, class: 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :finishdate %><br>
-    <%= f.date_select :finishdate %>
+    
+  <div class="field form-group">
+    <%= f.label :'finish date', class: 'col-sm-2 control-label' %>
+	<div class="col-sm-10">
+    <%= f.date_select :finishdate, class: 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
+  
+  <div class="field form-group">
+    <%= f.label :address, class: 'col-sm-2 control-label' %>
+	<div class='col-sm-10'>
+    <%= f.text_area :address, class: 'form-control' %>
+	</div>
   </div>
-  <div class="actions">
-    <%= f.submit "發送" %>
+  
+  <div class="actions form-group">
+    <div class='col-sm-2'>
+    <%= f.submit "發送", class: 'form-control' %>
+	</div>
   </div>
 <% end %>
+</form>
