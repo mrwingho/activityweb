@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :activities
+  resources :activities do
+    resources :activity_interestships
+  end
+  
+  resources :interests
+  
+  resources :members
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

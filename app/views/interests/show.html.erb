@@ -1,0 +1,30 @@
+<head>
+  <title><%= @interest.interestname %></title>
+</head>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+
+<strong><%= @interest.interestname %></strong> | 現有<strong><%= @interest.activities.size %></strong> 個結果
+<p>
+  <strong>興趣名稱:</strong>
+  <%= @interest.interestname %>
+</p>
+
+<p>
+  <strong>簡介:</strong>
+  <%= @interest.description %>
+</p>
+
+<p>
+  <strong>活動列表:</strong>
+	<% @interest.activities.each do |i| %>
+		<%= link_to i.title, i %> ,
+	<% end %>
+</p>
+
+
+
+<%= link_to '編輯', edit_interest_path(@interest) %> |
+<%= link_to '返回列表', interests_path %>

@@ -1,0 +1,53 @@
+<head>
+  <title>興趣社區</title>
+</head>
+<p id="notice"><%= notice %></p>
+
+<h1>興趣列表</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>興趣</th>
+      <th>相關數目</th>
+      <th>參與人數</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interests.each do |interest| %>
+      <tr class="active">
+        <td><%= interest.interestname %></td>
+        <td><%= interest.activities.size %></td>
+        <td></td>
+        <td>
+		  <div class="btn-group btn-group-sm">
+		    <button class="btn btn-default">
+		      <%= link_to interest do %>
+              <i class="glyphicon glyphicon-folder-open"></i> 打開
+			  <% end %>
+            </button>
+            <button class="btn btn-default">
+			  <%= link_to edit_interest_path(interest) do %>
+              <i class="glyphicon glyphicon-pencil"></i> 編輯
+			  <% end %>
+            </button>
+			<button class="btn btn-default">
+			  <%= link_to interest, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="glyphicon glyphicon-remove-sign"></i> 刪除
+			  <% end %>
+            </button>
+	      </div>
+		</td>
+		
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to new_interest_path, class: 'btn-sm btn-primary' do %>
+<i class="glyphicon glyphicon-plus"></i> 新增興趣社區
+<% end %>

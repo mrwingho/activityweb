@@ -41,11 +41,26 @@
   </div>
  
   <div class="field form-group">
-    <%= f.label :address, class: 'col-sm-2 control-label' %>
-	<div class='col-sm-10'>
-    <%= f.text_area :address, class: 'form-control' %>
-	</div>
+      <%= f.label :address, class: 'col-sm-2 control-label' %>
+	      <div class='col-sm-10'>
+          <%= f.text_area :address, class: 'form-control' %>
+	      </div>
   </div>
+  
+  
+  <%= f.collection_check_boxes(:interest_ids, Interest.all, :id, :interestname) do |b| %>
+  <div class="row">
+    <%= b.label(class: "check_box") do %>
+      <div class="col-xs-4">
+        <%= b.check_box(class: "check_box") %>
+      </div>
+
+      <div class="col-xs-8">
+        <%= b.object.interestname %>
+      </div>       
+    <% end %>
+  </div>
+<% end %>
   
   
   <div class="actions form-group">

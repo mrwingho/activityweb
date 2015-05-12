@@ -20,6 +20,13 @@
 </p>
 
 <p>
+  <strong>興趣社區:</strong>
+	<% @activity.interests.each do |i| %>
+		<%= i.interestname %>
+	<% end %>
+</p>
+
+<p>
   <strong>開始日期:</strong>
   <%= @activity.startdate %>
 </p>
