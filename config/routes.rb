@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
+  get 'users/new'
+
 get 'static_pages/help'
 
   resources :activities do
